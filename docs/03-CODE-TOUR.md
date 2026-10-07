@@ -11,14 +11,14 @@
 | [tools/serve.mjs](../tools/serve.mjs) | Local preview infrastructure; only public/ is served. |
 | [tools/check-site.mjs](../tools/check-site.mjs) | Checks referenced local assets exist, without pretending to judge usability. |
 | [public/core.js](../public/core.js) | The main input/output rule; no DOM access. |
-| [public/app.js](../public/app.js) | Browser events, parsing, rendering and visible errors. |
+| [public/app.js](../public/app.js) | Start and Reset handlers that supply real timers, stop the previous run and append emitted lines to the log. |
 | [test/core.test.js](../test/core.test.js) | Independent boundary examples for the core contract. |
 
 ## Follow one path, not every file
 
 Start at [public/core.js](../public/core.js) and locate `deliveryRun`. Use this trace as a map: Start click clears old run → deliveryRun emits start → schedules A at 80 ms then B at 20 ms → emits scheduled → synchronous call returns → B callback emits delivery → A callback emits delivery or a caught simulated error.
 
-The tooling is intentionally separate from the product concept. You can study the local server or CI after the main rule is clear. Neither an HTTP preview server nor a workflow configuration should become a prerequisite for understanding an inline-block box or a small pure function.
+The tooling is intentionally separate from the product concept. You can study the local server or CI after the main rule is clear. Neither an HTTP preview server nor a workflow configuration should become a prerequisite for understanding a small pure function.
 
 ## Decision: Inject the scheduler
 
@@ -46,9 +46,9 @@ A try/catch around scheduling would finish before the delayed callback throws. T
 
 ## Change boundaries
 
-A small change should begin in the file that owns its meaning. Change domain rules in the core, wording and interaction in the browser adapter, and layout in the relevant CSS rule. For the static references, semantic information belongs in HTML before styling. For the Git reference, the staged snapshot boundary belongs in the helper rather than being guessed from editor state.
+A small change should begin in the file that owns its meaning. Change domain rules in the core (`public/core.js`), wording and interaction in the browser adapter (`public/app.js`), and layout in the relevant CSS rule.
 
-If a story crosses two files, say why. A new unit, weather option or UI station may require a contract, a control and tests to change together. That is a coherent feature boundary, not permission to rewrite unrelated parts of the project.
+If a story crosses two files, say why. A new option may require the core contract, a control and tests to change together. That is a coherent feature boundary, not permission to rewrite unrelated parts of the project.
 
 ## Deliberate limits
 

@@ -104,9 +104,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Let learners predict another ordering.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Accept a small bounded delay choice; pass it through the scheduler boundary; document equal-delay limits separately.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Accept a small bounded delay choice; pass it through the scheduler boundary; document equal-delay limits separately. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: Tests control callback order without waiting on wall time.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: Tests control callback order without waiting on wall time. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose the allowed delay values. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -114,9 +114,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Make stale-output diagnosis visible.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Generate an ID at start; attach it to emitted events; preserve the per-run active guard.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Generate an ID at start; attach it to emitted events; preserve the per-run active guard. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: Old canceled run IDs never appear after reset in the current log.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: Old canceled run IDs never appear after reset in the current log. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose a readable ID scheme. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -124,9 +124,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Signal when every scheduled job has finished.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Count completion for both success and failure; emit one final summary; suppress it for a canceled run.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Count completion for both success and failure; emit one final summary; suppress it for a canceled run. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: A failure does not leave the run permanently pending.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: A failure does not leave the run permanently pending. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose whether cancellation has its own summary. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -134,9 +134,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Distinguish user cancellation from delivery failure.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Record cancellation as a UI event; call the stop function; avoid relabeling canceled jobs as failed deliveries.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Record cancellation as a UI event; call the stop function; avoid relabeling canceled jobs as failed deliveries. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: No later callback appends after cancellation feedback.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: No later callback appends after cancellation feedback. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose wording for jobs already completed. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -144,9 +144,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Clarify what a test double assumes.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: List deferred invocation, handles and cancellation responsibilities; contrast a fake synchronous scheduler; explain unsupported behavior.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: List deferred invocation, handles and cancellation responsibilities; contrast a fake synchronous scheduler; explain unsupported behavior. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: The worksheet does not claim the fake measures real timer precision.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: The worksheet does not claim the fake measures real timer precision. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose one assumption to challenge. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -154,9 +154,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Compare predicted and actual event IDs after a run.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Store the prediction separately; collect actual completions; compare only after completion or explicit cancel.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Store the prediction separately; collect actual completions; compare only after completion or explicit cancel. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: Prediction is never presented as observed delivery evidence.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: Prediction is never presented as observed delivery evidence. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose how to display a mismatch. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -164,9 +164,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Explore an unreliable scheduler as a new contract.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Invoke one captured callback twice in a test; decide whether idempotent delivery is required; add per-job completion tracking only if chosen.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Invoke one captured callback twice in a test; decide whether idempotent delivery is required; add per-job completion tracking only if chosen. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: The reference limit and your extended policy are clearly distinguished.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: The reference limit and your extended policy are clearly distinguished. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose reject, ignore or record duplicates. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -174,9 +174,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Separate concise status from diagnostic explanation.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Return structured error data; render safe text in a disclosure; avoid exposing unrelated environment details.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Return structured error data; render safe text in a disclosure; avoid exposing unrelated environment details. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: Toggling detail does not rerun the callback or change completion state.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: Toggling detail does not rerun the callback or change completion state. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose the diagnostic fields. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 
@@ -184,9 +184,9 @@ Look for a concrete connection to `public/core.js` or `public/app.js`. A strong 
 
 **First hint:** The desired improvement is “Verify repeated cancellation is harmless.” Start by identifying which existing boundary already knows the necessary information. Do not copy that information into new state until you can explain why derivation is insufficient.
 
-**Second hint:** Follow this source-specific route: Call stop twice in a fake scheduler; invoke queued callbacks afterward; inspect output and cancellation records.. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
+**Second hint:** Follow this source-specific route: Call stop twice in a fake scheduler; invoke queued callbacks afterward; inspect output and cancellation records. Keep each stage independently inspectable. If a step requires a policy choice, write the choice before implementing it.
 
-**Third hint:** Your strongest completion evidence should establish: No delivery is emitted after either stop and repeated calls do not reactivate work.. Invent a plausible wrong implementation and make your example disagree with it.
+**Third hint:** Your strongest completion evidence should establish: No delivery is emitted after either stop and repeated calls do not reactivate work. Invent a plausible wrong implementation and make your example disagree with it.
 
 **Decision still left to you:** Choose whether duplicate cancel requests are observable. The guide intentionally does not settle this. Evaluate your answer by clarity of the contract, consistency of the implementation and quality of verification, not by guessing the author's preferred wording.
 

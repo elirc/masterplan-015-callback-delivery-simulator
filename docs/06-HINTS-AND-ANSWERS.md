@@ -6,7 +6,7 @@ There are intentionally no complete feature patches here. Use one hint, return t
 
 ## Story 01: Add delivery C
 
-**Hint 1 — ownership:** Begin from `deliveryRun`. Add a third job with a delay between B and A and extend the predicted trace.
+**Hint 1 — ownership:** Begin from the job list inside `deliveryRun`. Add a third job with a delay between B and A and extend the predicted trace.
 
 **Hint 2 — reasoning:** Revisit the decision “Inject the scheduler”. Ask yourself: Which part of the test models order, and which part deliberately does not model elapsed time?
 
@@ -16,7 +16,7 @@ There are intentionally no complete feature patches here. Use one hint, return t
 
 ## Story 02: Show pending count
 
-**Hint 1 — ownership:** Begin from `deliveryRun`. Represent pending job IDs as explicit run data or emitted events; derive a count.
+**Hint 1 — ownership:** Begin from the `handles` array and `emit` calls in `deliveryRun`. Represent pending job IDs as explicit run data or emitted events; derive a count.
 
 **Hint 2 — reasoning:** Revisit the decision “Guard canceled runs as well as timers”. Ask yourself: Why is one global boolean shared by every run weaker than one closure per run?
 
@@ -26,9 +26,9 @@ There are intentionally no complete feature patches here. Use one hint, return t
 
 ## Story 03: Add a pause-before-start explanation
 
-**Hint 1 — ownership:** Begin from `deliveryRun`. Display the learner's selected predicted order before starting and compare after completion.
+**Hint 1 — ownership:** Begin from the Start handler in `public/app.js`. Display the learner's selected predicted order before starting and compare after completion.
 
-**Hint 2 — reasoning:** Revisit the decision “Catch failure inside the callback”. Ask yourself: Where must a catch sit to observe an exception thrown later?
+**Hint 2 — reasoning:** Revisit the decision “Inject the scheduler”. Ask yourself: Which part of the test models order, and which part deliberately does not model elapsed time?
 
 **Answer direction:** A defensible solution demonstrates this observable result: The UI distinguishes a prediction from recorded output and does not relabel guesses as evidence. The exact code is not prescribed. If your change achieves that result by changing an unrelated original rule, revise either the implementation or the story contract explicitly.
 
@@ -36,9 +36,9 @@ There are intentionally no complete feature patches here. Use one hint, return t
 
 ## Story 04: Retry only A as a new run
 
-**Hint 1 — ownership:** Begin from `deliveryRun`. Define a new bounded retry action that does not duplicate B.
+**Hint 1 — ownership:** Begin from the `stop` function returned by `deliveryRun`. Define a new bounded retry action that does not duplicate B.
 
-**Hint 2 — reasoning:** Revisit the decision “Inject the scheduler”. Ask yourself: Which part of the test models order, and which part deliberately does not model elapsed time?
+**Hint 2 — reasoning:** Revisit the decision “Guard canceled runs as well as timers”. Ask yourself: Why is one global boolean shared by every run weaker than one closure per run?
 
 **Answer direction:** A defensible solution demonstrates this observable result: A failure followed by retry shows one retry result with a distinct attempt identifier. The exact code is not prescribed. If your change achieves that result by changing an unrelated original rule, revise either the implementation or the story contract explicitly.
 
@@ -46,7 +46,7 @@ There are intentionally no complete feature patches here. Use one hint, return t
 
 ## Story 05: Prove old-run isolation
 
-**Hint 1 — ownership:** Begin from `deliveryRun`. Create two fake runs, cancel the first, then invoke both sets of captured callbacks.
+**Hint 1 — ownership:** Begin from the `active` flag in `deliveryRun`. Create two fake runs, cancel the first, then invoke both sets of captured callbacks.
 
 **Hint 2 — reasoning:** Revisit the decision “Guard canceled runs as well as timers”. Ask yourself: Why is one global boolean shared by every run weaker than one closure per run?
 
@@ -56,7 +56,7 @@ There are intentionally no complete feature patches here. Use one hint, return t
 
 ## Story 06: Label error and success rows
 
-**Hint 1 — ownership:** Begin from `deliveryRun`. Return structured event objects and render their labels without parsing message strings.
+**Hint 1 — ownership:** Begin from the `emit` calls inside the scheduled callback. Return structured event objects and render their labels without parsing message strings.
 
 **Hint 2 — reasoning:** Revisit the decision “Catch failure inside the callback”. Ask yourself: Where must a catch sit to observe an exception thrown later?
 

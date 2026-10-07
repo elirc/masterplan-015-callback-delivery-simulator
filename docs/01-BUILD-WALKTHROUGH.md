@@ -20,13 +20,13 @@ Write the four normal log entries in order before pressing Start. Scheduling A f
 
 Trace schedule from deliveryRun into setTimeout in the adapter. Then find the fake schedule in test/core.test.js. It captures functions rather than waiting. A good test can invoke A first to check error isolation or B first to match the normal browser order; the contract does not depend on a single lucky timing observation.
 
-**Pause and produce evidence:** A fails. Predict the outcome, then compare it with the reference. In your notes, distinguish what the code says should happen from what you actually observed.
+**Pause and produce evidence:** Normal run. Predict the outcome, then compare it with the reference. In your notes, distinguish what the code says should happen from what you actually observed.
 
 ## Step 3: Recover from a callback error
 
 Select simulated error and run again. The log contains B and an error for A. Explain why the error does not propagate back into the earlier button handler. Place your cursor at the try/catch inside the scheduled callback and connect that location to the delayed execution trace.
 
-**Pause and produce evidence:** Reset before delivery. Predict the outcome, then compare it with the reference. In your notes, distinguish what the code says should happen from what you actually observed.
+**Pause and produce evidence:** A fails. Predict the outcome, then compare it with the reference. In your notes, distinguish what the code says should happen from what you actually observed.
 
 ## Step 4: Cancel a whole run
 

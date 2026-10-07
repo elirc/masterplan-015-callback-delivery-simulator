@@ -6,8 +6,6 @@ These are new exercises beyond the finished reference. No story is marked comple
 
 ## Story 01: Add delivery C
 
-**User need:** As a learner or user of Callback Delivery Simulator, I want this small improvement so the behavior is easier to use, explain or verify.
-
 **Feature boundary:** Add a third job with a delay between B and A and extend the predicted trace.
 
 **Implementation plan:**
@@ -26,8 +24,6 @@ These are new exercises beyond the finished reference. No story is marked comple
 **Stretch only after completion:** add one adversarial example that a plausible but incorrect solution would fail. Explain why that example is more informative than adding three ordinary examples.
 
 ## Story 02: Show pending count
-
-**User need:** As a learner or user of Callback Delivery Simulator, I want this small improvement so the behavior is easier to use, explain or verify.
 
 **Feature boundary:** Represent pending job IDs as explicit run data or emitted events; derive a count.
 
@@ -48,8 +44,6 @@ These are new exercises beyond the finished reference. No story is marked comple
 
 ## Story 03: Add a pause-before-start explanation
 
-**User need:** As a learner or user of Callback Delivery Simulator, I want this small improvement so the behavior is easier to use, explain or verify.
-
 **Feature boundary:** Display the learner's selected predicted order before starting and compare after completion.
 
 **Implementation plan:**
@@ -68,8 +62,6 @@ These are new exercises beyond the finished reference. No story is marked comple
 **Stretch only after completion:** add one adversarial example that a plausible but incorrect solution would fail. Explain why that example is more informative than adding three ordinary examples.
 
 ## Story 04: Retry only A as a new run
-
-**User need:** As a learner or user of Callback Delivery Simulator, I want this small improvement so the behavior is easier to use, explain or verify.
 
 **Feature boundary:** Define a new bounded retry action that does not duplicate B.
 
@@ -90,8 +82,6 @@ These are new exercises beyond the finished reference. No story is marked comple
 
 ## Story 05: Prove old-run isolation
 
-**User need:** As a learner or user of Callback Delivery Simulator, I want this small improvement so the behavior is easier to use, explain or verify.
-
 **Feature boundary:** Create two fake runs, cancel the first, then invoke both sets of captured callbacks.
 
 **Implementation plan:**
@@ -110,8 +100,6 @@ These are new exercises beyond the finished reference. No story is marked comple
 **Stretch only after completion:** add one adversarial example that a plausible but incorrect solution would fail. Explain why that example is more informative than adding three ordinary examples.
 
 ## Story 06: Label error and success rows
-
-**User need:** As a learner or user of Callback Delivery Simulator, I want this small improvement so the behavior is easier to use, explain or verify.
 
 **Feature boundary:** Return structured event objects and render their labels without parsing message strings.
 
